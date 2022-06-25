@@ -1,0 +1,147 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Project</title>
+</head>
+<body>
+  <main>
+
+    <header>
+      <!--     header  title -->
+      <div class="title">
+        <h1>Exposition Broceliande</h1>
+        <div class="underline"></div>
+      </div>
+    </header>
+
+    <section class="container">
+
+      <!--    person   review -->
+      <div class="review">
+        <div class="img-container">
+          <img src="https://res.cloudinary.com/nolwen/image/upload/v1656172367/Saint-Camille-web_vzx758.jpg" id="person-img">
+        </div>
+        <h3 id="author">Nolwenn Escoubet</h3>
+        <p id="job">Vie privée</p>
+        <p id="info">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae sapiente quibusdam quod rem autem, culpa ea omnis cupiditate quia voluptatibus.
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae sapiente quibusdam quod rem autem, culpa ea omnis cupiditate quia voluptatibus.
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae sapiente quibusdam quod rem autem, culpa ea omnis cupiditate quia voluptatibus.
+        </p>
+        <p id="price">
+        <strong>100€</strong>
+        </p>
+      </div>
+
+      <div class="button-container">
+         <div class="btn-row1">
+       <!--   prev  button -->
+           <button class="btn prev-btn">
+           <i><svg viewBox="0 0 256 512" width="100" title="angle-left">
+  <path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z" />
+</svg></i>
+         </button>
+       <!--   next button -->
+           <button class="btn next-btn">
+           <i><svg viewBox="0 0 256 512" width="100" title="angle-right">
+  <path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
+</svg></i>
+         </button>
+         </div>
+
+
+
+       </div>
+
+
+    </section>
+  </main>
+
+</body>
+</html>
+<script>
+const nameN = "Nolwenn Escoubet L'Hévéder";
+const reviews = [
+  {
+    id: 1,
+    name: nameN,
+    job: "Vie privée",
+    img: "https://res.cloudinary.com/nolwen/image/upload/v1656172388/Vie_Priv%C3%A9e_s5ivza.jpg" ,
+    text:"Identité négative sur papier journal Libération ",
+    price: "100 €",
+  },
+  {
+    id: 2,
+    name: nameN,
+    job: "Saint Camille",
+    img: "https://res.cloudinary.com/nolwen/image/upload/v1656172367/Saint-Camille-web_vzx758.jpg",
+    text: "Identité négative sur papier journal Libération ",
+    price: "150 €",
+  },
+  {
+    id: 3,
+    name: nameN,
+    job: "Le Greffe",
+    img: "https://res.cloudinary.com/nolwen/image/upload/v1656172366/Greffe-web_jbpcea.jpg",
+    text: "Identité négative sur papier journal Libération ",
+    price: "800 €",
+  },
+  {
+    id: 4,
+    name: nameN,
+    job: "Dremmm (Visage)",
+    img: "https://res.cloudinary.com/nolwen/image/upload/v1656172388/Dremm_da3rtn.jpg",
+    text:"4 identités positives obtenues à partir de Polaroïd assemblées pour donner à voir une mosaïque de visages, de formes plastiques, de paysages ...",
+  }
+];
+
+//select items
+const img = document.getElementById("person-img");
+const author = document.getElementById("author");
+const job = document.getElementById("job");
+const info = document.getElementById("info");
+const price = document.getElementById("price");
+
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
+const randomBtn = document.querySelector(".random-btn");
+
+//set starting item
+let currentItem = 0;
+
+//load initial item
+window.addEventListener('DOMContentLoaded', function(){
+  showPerson()
+})
+
+//show person based on item
+function showPerson(){
+  const item = reviews[currentItem];
+  img.src = item.img;
+  author.textContent = item.name;
+  job.textContent = item.job;
+  info.textContent = item.text;
+  price.textContent = item.price;
+}
+
+//show next person
+nextBtn.addEventListener('click', function(){
+  currentItem++;
+  if(currentItem > reviews.length - 1){
+    currentItem = 0;
+  }
+  showPerson();
+})
+
+//show prev person
+prevBtn.addEventListener('click', function(){
+  currentItem--;
+   if(currentItem < 0){
+    currentItem = reviews.length - 1;
+  }
+  showPerson();
+})
+
+</script>
