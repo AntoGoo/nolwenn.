@@ -21,7 +21,7 @@
       <!--    person   review -->
       <div class="review">
         <div class="img-container">
-          <img src="https://res.cloudinary.com/nolwen/image/upload/v1656172367/Saint-Camille-web_vzx758.jpg" id="person-img">
+          <img src="https://res.cloudinary.com/nolwen/image/upload/v1656172367/Saint-Camille-web_vzx758.jpg" id="person-img" width="500" height="600">
         </div>
         <h3 id="author">Nolwenn Escoubet</h3>
         <p id="job">Vie privée</p>
@@ -69,7 +69,7 @@ const reviews = [
     name: nameN,
     job: "Vie privée",
     img: "https://res.cloudinary.com/nolwen/image/upload/v1656172388/Vie_Priv%C3%A9e_s5ivza.jpg" ,
-    text:"Identité négative sur papier journal Libération ",
+    info:"Identité négative sur papier journal Libération ",
     price: "100 €",
   },
   {
@@ -77,7 +77,7 @@ const reviews = [
     name: nameN,
     job: "Saint Camille",
     img: "https://res.cloudinary.com/nolwen/image/upload/v1656172367/Saint-Camille-web_vzx758.jpg",
-    text: "Identité négative sur papier journal Libération ",
+    info: "Identité négative sur papier journal Libération ",
     price: "150 €",
   },
   {
@@ -85,7 +85,7 @@ const reviews = [
     name: nameN,
     job: "Le Greffe",
     img: "https://res.cloudinary.com/nolwen/image/upload/v1656172366/Greffe-web_jbpcea.jpg",
-    text: "Identité négative sur papier journal Libération ",
+    info: "Identité négative sur papier journal Libération ",
     price: "800 €",
   },
   {
@@ -93,7 +93,7 @@ const reviews = [
     name: nameN,
     job: "Dremmm (Visage)",
     img: "https://res.cloudinary.com/nolwen/image/upload/v1656172388/Dremm_da3rtn.jpg",
-    text:"4 identités positives obtenues à partir de Polaroïd assemblées pour donner à voir une mosaïque de visages, de formes plastiques, de paysages ...",
+    info:"4 identités positives obtenues à partir de Polaroïd assemblées pour donner à voir une mosaïque de visages, de formes plastiques, de paysages ...",
   }
 ];
 
@@ -122,7 +122,7 @@ function showPerson(){
   img.src = item.img;
   author.textContent = item.name;
   job.textContent = item.job;
-  info.textContent = item.text;
+  info.textContent = item.info;
   price.textContent = item.price;
 }
 
